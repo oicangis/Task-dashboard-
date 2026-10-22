@@ -2,6 +2,7 @@ import { Task } from '@/types/task'
 import Button from '@/components/atoms/button/buttons'
 import Checkbox from '@/components/atoms/checkbox/checkbox'
 
+
 type TaskItemProps = {
   task: Task
   onEdit: (task: Task) => void
@@ -14,6 +15,7 @@ export default function TaskItem({ task, onEdit, deleteTask, editarTask }: TaskI
     <li className="flex items-center justify-between rounded-xl border border-gray-200 bg-white px-4 py-3 shadow-sm">
       <div className="flex items-center gap-3">
         <Checkbox
+          type="checkbox"
           checked={task.completed}
           onChange={() => editarTask(task, task.title, task.description, !task.completed)}
           className="h-4 w-4 accent-blue-600"
